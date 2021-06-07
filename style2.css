@@ -1,0 +1,85 @@
+:root{
+    --bg_color: #f0fff0;
+    --txt_color: #2f4f4f;
+    --dark_color: #0e740e;
+    --colorin: red;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+
+body{
+    overflow-y: auto;
+    background: var(--bg_color);
+}
+
+
+
+.main {
+    /* height: 90vh; */
+    background: var(--bg_color);
+    display: grid;
+    grid:   "L    L "
+            "P    P "
+            "F    F ";
+    grid-row-gap: 0.5em;
+    padding: 0;
+    position: relative;
+    /* padding: 1em; */
+  }
+.canvas1{
+    grid-area: C;
+}
+
+.logo {
+     grid-area: L;
+     background: var(--dark_color);
+     height: 32vh;
+     position: fixed;
+     top:0;
+     left:0;
+     
+     
+     
+}
+.cv_link{
+    position: absolute;
+    top: 1em;
+    right: 2em;
+    z-index: 38;
+    padding: 1em;
+    border: 1px solid var(--txt_color);
+    background: #ffffff81;
+    box-shadow: 5px 1px 10px var(--txt_color);
+        
+
+}
+.filling{
+    height: 30vh;
+}   
+.post{
+    grid-area: P;
+    background: transparent;
+    height: 60vh;
+    z-index: 2;
+    position: relative;
+    /* height:100%; */
+    min-height:100vh;
+    width:100%;
+    margin-top:30vh;
+    overflow-y: hidden;
+    box-shadow: 
+        0px -5px 50px var(--txt_color),
+        0px -5px 5px var(--dark_color);
+        ;
+    
+
+}
+.foot{
+    grid-area: F;
+    background: var(--dark_color);
+}
