@@ -54,7 +54,66 @@
             console.log(self_bg,self_dark,self_text);
             console.log('CHILD');
             console.log(child_bg,child_dark,child_text);
+        }
+        const dark_theme = {
+            bg_color : "black",
+            dark_color: "lightslategrey",
+            txt_color: "antiquewhite"
+        }
+        const light_theme = {
+            bg_color : "#f0fff0",
+            dark_color: "#0e740e",
+            txt_color: "#2f4f4f"
+        }
+
+        const solar_light_theme = {
+            bg_color : "#fdf6e3",
+            dark_color: "#eee8d5",
+            txt_color: "#586e75"
+        }
+        const solar_dark_theme = {
+            bg_color : "#073642",
+            dark_color: "#002b36",
+            txt_color: "#93a1a1"
+        }
+
+        const themes = ['light_theme','dark_theme','solar_light_theme','solar_dark_theme']
+
         
+  
+        function switch_theme(theme){
+            switch (theme){
+                case 'dark_theme':
+                    document.documentElement.style.setProperty('--bg_color', dark_theme['bg_color']);
+                    document.documentElement.style.setProperty('--dark_color', dark_theme['dark_color']);
+                    document.documentElement.style.setProperty('--txt_color', dark_theme['txt_color']);
+                    iFrameWin.mimic_colors();
+                    break;
+                case 'light_theme':
+                    document.documentElement.style.setProperty('--bg_color', light_theme['bg_color']);
+                    document.documentElement.style.setProperty('--dark_color', light_theme['dark_color']);
+                    document.documentElement.style.setProperty('--txt_color', light_theme['txt_color']);
+                    iFrameWin.mimic_colors();
+                    break;
+                case 'solar_light_theme':
+                    document.documentElement.style.setProperty('--bg_color', solar_light_theme['bg_color']);
+                    document.documentElement.style.setProperty('--dark_color', solar_light_theme['dark_color']);
+                    document.documentElement.style.setProperty('--txt_color', solar_light_theme['txt_color']);
+                    iFrameWin.mimic_colors();
+                    break;
+                case 'solar_dark_theme':
+                    document.documentElement.style.setProperty('--bg_color', solar_dark_theme['bg_color']);
+                    document.documentElement.style.setProperty('--dark_color', solar_dark_theme['dark_color']);
+                    document.documentElement.style.setProperty('--txt_color', solar_dark_theme['txt_color']);
+                    iFrameWin.mimic_colors();
+                    break;
+                default:
+                    console.log('no theme named: '+theme);
+                    break;
+                
+                
+            }
+
         }
     </script>
     
