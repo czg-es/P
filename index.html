@@ -35,7 +35,29 @@
         <div class="foot">CZG.</div>
     </div>
     <script src="Pt.js"></script>
-    <script src="main.js"></script>
+    <script src="_main.js"></script>
+    <script >
+        var iFrameWin; //reference to the window object, sent from iframe
+        function exec_child(){
+            iFrameWin.mimic_colors();
+        }
+
+        function get_variables(){
+            let self_bg = getComputedStyle(document.documentElement).getPropertyValue('--bg_color');
+            let self_dark = getComputedStyle(document.documentElement).getPropertyValue('--dark_color');
+            let self_text = getComputedStyle(document.documentElement).getPropertyValue('--txt_color');
+            let child_bg = getComputedStyle(iFrameWin.document.documentElement).getPropertyValue('--bg_color');
+            let child_dark = getComputedStyle(iFrameWin.document.documentElement).getPropertyValue('--dark_color');
+            let child_text = getComputedStyle(iFrameWin.document.documentElement).getPropertyValue('--txt_color');
+
+            console.log('SELF');
+            console.log(self_bg,self_dark,self_text);
+            console.log('CHILD');
+            console.log(child_bg,child_dark,child_text);
+        
+        }
+    </script>
+    
     <!-- <script>        document.getElementById("iframe").onload = function () { this.contentWindow.scrollTo(0, 200) };    </script> -->
 </body>
 </html>
