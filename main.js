@@ -1,43 +1,19 @@
 const frame  = document.getElementById('iframe');
-//const bgColor  = getComputedStyle(frame.document.documentElement).getPropertyValue('--bg_color');
-//const colore = frame.contentWindow.document.documentElement.style.getProperty('--bg-color');
-/* 
-var style = getComputedStyle(document.body)
-console.log( style.getPropertyValue('--colorin') ) // #336699
-console.log( style.getPropertyValue('--bg_color') ) // calc(2px*2)
 
- */
-var oIframe = document.getElementById('iframe');
-var oDoc = (oIframe.contentWindow || oIframe.contentDocument);
-var style = window.getComputedStyle(oDoc.document.documentElement);
-let colour = style.getPropertyValue('--txt_color');
-console.log(colour);
+const frame1_contentWindow = frame.contentWindow;
+const frame1_Window = frame.window;
+const frame1_doc = frame.contentDocument ;
+        
 
-//let estilo = window.getComputedStyle(oDoc);
+let parent_bg = getComputedStyle(document.documentElement).getPropertyValue('--bg_color');
+let parent_dark = getComputedStyle(document.documentElement).getPropertyValue('--dark_color');
+let parent_text = getComputedStyle(document.documentElement).getPropertyValue('--txt_color');
 
+let child_bg = getComputedStyle(frame1_contentWindow.document.documentElement).getPropertyValue('--bg_color');
+let child_dark = getComputedStyle(frame1_contentWindow.document.documentElement).getPropertyValue('--dark_color');
+let child_text = getComputedStyle(frame1_contentWindow.document.documentElement).getPropertyValue('--txt_color');
 
-//let coloure = oDoc.getPropertyValue('--txt_color');
-//getComputedStyle(document.documentElement).getPropertyValue('--bg_color');
-//document.getElementById('iframe').contentWindow.document.documentElement.style.setProperty('--bg_color','blue');
-
-let p_color = getComputedStyle(frame.contentWindow.document.documentElement).getPropertyValue('--bg_color');
-
-
-
-function changeFrame()
-{
-  var oIframe = document.getElementById('iframe');
-  var oDoc = (oIframe.contentWindow || oIframe.contentDocument);
-  if (oDoc.document) oDoc = oDoc.document;
-  oDoc.body.style.backgroundColor = "#00f";
-  return true;
-}
-changeFrame();
-
-
-function change_bg (){
-    //document.getElementById('iframe').contentWindow.document.documentElement.style.setProperty('--bg_color','blue');
-    let p_color = getComputedStyle(frame.contentWindow.document.documentElement); //.getPropertyValue('--bg_color');
-}
-change_bg();
-
+console.log('SELF');
+console.log(parent_bg,parent_dark,parent_text);
+console.log('CHILD');
+console.log(child_bg,child_dark,child_text);
