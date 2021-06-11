@@ -90,6 +90,12 @@
             console.log(color_s);
             document.getElementById('iframe').contentWindow.postMessage(color_s, "*");
         }
+
+        function send_colores(colors){
+            color_s = JSON.stringify(colors);
+            console.log(color_s);
+            document.getElementById('iframe').contentWindow.frames[0][0].postMessage(color_s, "*");
+        }
         
         function switch_theme(theme){
             switch (theme){
