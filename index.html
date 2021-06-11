@@ -119,32 +119,32 @@
         function switch_theme(theme){
             switch (theme){
                 case 'dark_theme':
+                    current_theme = dark_theme;
                     document.documentElement.style.setProperty('--bg_color', dark_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', dark_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', dark_theme['txt_color']);
                     iFrameWin.mimic_colors();
-                    current_theme = dark_theme;
                     break;
                 case 'light_theme':
+                    current_theme = light_theme;
                     document.documentElement.style.setProperty('--bg_color', light_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', light_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', light_theme['txt_color']);
                     iFrameWin.mimic_colors();
-                    current_theme = light_theme;
                     break;
                 case 'solar_light_theme':
+                    current_theme = solar_light_theme;
                     document.documentElement.style.setProperty('--bg_color', solar_light_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', solar_light_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', solar_light_theme['txt_color']);
                     iFrameWin.mimic_colors();
-                    current_theme = solar_light_theme;
                     break;
                 case 'solar_dark_theme':
+                    current_theme = solar_dark_theme;
                     document.documentElement.style.setProperty('--bg_color', solar_dark_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', solar_dark_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', solar_dark_theme['txt_color']);
                     iFrameWin.mimic_colors();
-                    current_theme = solar_dark_theme;
                     break;
                 default:
                     console.log('no theme named: '+theme);
