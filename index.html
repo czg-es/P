@@ -12,8 +12,11 @@
         <div class="logo">
             <a href="/P/" target="_top" title="Home"><canvas id="canvas1" class="canvas1"> </canvas></a>
             <div class="cv_link">
-                <a href="https://script.google.com/macros/s/AKfycbzeBQ60lBQ892TAN97n0pkrhwQhvLOmkQ2inSjw9I-gS80Ffj_S26sVfThZ7NubAUQI/exec" 
+                <!-- <a href="https://script.google.com/macros/s/AKfycbzeBQ60lBQ892TAN97n0pkrhwQhvLOmkQ2inSjw9I-gS80Ffj_S26sVfThZ7NubAUQI/exec" 
+                    class="" target="iframe" title="Contacto">✉️</a> -->    
+                <a href="https://script.google.com/macros/s/AKfycbx00K3xPWGobilULBzGD3TEEbwPK-og3A1VJZcrKKhPOEUmqizy5VdAn7BiKzVJ1of8/exec" 
                     class="" target="iframe" title="Contacto">✉️</a>
+
                 <a href="cv.html" class="" target="_blank" title="Sobre mi">🖥️</a>
                 
             </div>
@@ -37,6 +40,7 @@
     <script src="Pt.js"></script>
     <script src="_main.js"></script>
     <script >
+        
         var iFrameWin; //reference to the window object, sent from iframe
         function exec_child(){
             iFrameWin.mimic_colors();
@@ -77,10 +81,16 @@
             txt_color: "#93a1a1"
         }
 
-        const themes = ['light_theme','dark_theme','solar_light_theme','solar_dark_theme']
+        const themes = ['light_theme','dark_theme','solar_light_theme','solar_dark_theme'];
 
+        let current_theme = light_theme;
         
-  
+        function send_colors(colors){
+            color_s = JSON.stringify(colors);
+            console.log(color_s);
+            document.getElementById('iframe').contentWindow.postMessage(color_s, "*");
+        }
+        
         function switch_theme(theme){
             switch (theme){
                 case 'dark_theme':
