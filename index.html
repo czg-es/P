@@ -41,7 +41,7 @@
             
             <iframe id="iframe" name="iframe" src="https://czg-es.github.io/C_blog" 
                     frameborder="0" width="100%" height="100%" target="_PARENT"
-                    onload="switch_theme(current_theme)"></iframe></div>
+                    onload="switch_theme(current_theme_name)"></iframe></div>
         <div class="foot">CZG.</div>
     </div>
     <script src="Pt.js"></script>
@@ -91,6 +91,7 @@
         const themes = ['light_theme','dark_theme','solar_light_theme','solar_dark_theme'];
 
         let current_theme = light_theme;
+        let current_theme_name = 'light_theme';
         
 
         function send_colors(colors){
@@ -117,6 +118,7 @@
             switch (theme){
                 case 'dark_theme':
                     current_theme = dark_theme;
+                    current_theme_name = 'dark_theme';
                     document.documentElement.style.setProperty('--bg_color', dark_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', dark_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', dark_theme['txt_color']);
@@ -125,6 +127,7 @@
                     break;
                 case 'light_theme':
                     current_theme = light_theme;
+                    current_theme_name = 'light_theme';
                     document.documentElement.style.setProperty('--bg_color', light_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', light_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', light_theme['txt_color']);
@@ -133,6 +136,7 @@
                     break;
                 case 'solar_light_theme':
                     current_theme = solar_light_theme;
+                    current_theme_name = 'solar_light_theme';
                     document.documentElement.style.setProperty('--bg_color', solar_light_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', solar_light_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', solar_light_theme['txt_color']);
@@ -141,6 +145,7 @@
                     break;
                 case 'solar_dark_theme':
                     current_theme = solar_dark_theme;
+                    current_theme_name = 'solar_dark_theme';
                     document.documentElement.style.setProperty('--bg_color', solar_dark_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', solar_dark_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', solar_dark_theme['txt_color']);
