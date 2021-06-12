@@ -20,7 +20,7 @@
                                     class="" target="iframe" title="Contacto">✉️</a>
                 <a href="https://script.google.com/macros/s/AKfycbyBjQtOpBOG0sKodoJXNq1AP-6EYsgB-ImbJ6dkHJcIuylxNTvlvCuLsEiyY-qUTB_D/exec" 
                                     class="" target="iframe" title="Contacto">✉️</a>-->
-                <a href="contact.html" class="" target="iframe" title="Contacto">✉️</a>
+                <a href="contact.html" class="" target="iframe" title="Contacto" onclick="delay_send_col();">✉️</a>
                 
                 <a href="cv.html" class="" target="_blank" title="Sobre mi">🖥️</a>
                 
@@ -107,6 +107,10 @@
                 console.log("send_col Fallo:");
                 console.log(error);
             }
+        }
+
+        function delay_send_col() {
+            setTimeout(send_col(), 5000);
         }
         
         function switch_theme(theme){
