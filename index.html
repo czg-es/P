@@ -20,8 +20,7 @@
                                     class="" target="iframe" title="Contacto">✉️</a>
                 <a href="https://script.google.com/macros/s/AKfycbyBjQtOpBOG0sKodoJXNq1AP-6EYsgB-ImbJ6dkHJcIuylxNTvlvCuLsEiyY-qUTB_D/exec" 
                                     class="" target="iframe" title="Contacto">✉️</a>-->
-                <a href="https://script.google.com/macros/s/AKfycbyLWn5e2YKs5a48FS4nej15S_OM4lyAY6X0C6dzKQTbOB1aEJGVOR41sC14s6ybDQLH/exec" 
-                                    class="" target="iframe" title="Contacto">✉️</a>
+                <a href="contact.html" class="" target="iframe" title="Contacto">✉️</a>
                 
                 <a href="cv.html" class="" target="_blank" title="Sobre mi">🖥️</a>
                 
@@ -97,7 +96,7 @@
         function send_colors(colors){
             color_s = JSON.stringify(colors);
             console.log(color_s);
-            document.getElementById('iframe').contentWindow.frames[0][0].postMessage(color_s, "*");
+            document.getElementById('iframe').contentWindow.frames[0][0][0].postMessage(color_s, "*");
         }
 
         function send_col(){
