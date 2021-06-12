@@ -93,12 +93,7 @@
 
         let current_theme = light_theme;
         
-/*         function send_colors(colors){
-            color_s = JSON.stringify(colors);
-            console.log(color_s);
-            document.getElementById('iframe').contentWindow.postMessage(color_s, "*");
-        }
- */
+
         function send_colors(colors){
             color_s = JSON.stringify(colors);
             console.log(color_s);
@@ -111,8 +106,7 @@
             }
             catch (error) {
             console.log(error);
-            // expected output: ReferenceError: nonExistentFunction is not defined
-            // Note - error messages will vary depending on browser
+            
             }
         }
         
