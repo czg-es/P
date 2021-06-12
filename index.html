@@ -61,12 +61,12 @@
             let child_bg = getComputedStyle(iFrameWin.document.documentElement).getPropertyValue('--bg_color');
             let child_dark = getComputedStyle(iFrameWin.document.documentElement).getPropertyValue('--dark_color');
             let child_text = getComputedStyle(iFrameWin.document.documentElement).getPropertyValue('--txt_color');
-
+/* 
             console.log('SELF');
             console.log(self_bg,self_dark,self_text);
             console.log('CHILD');
             console.log(child_bg,child_dark,child_text);
-        }
+ */        }
         const dark_theme = {
             bg_color : "#778899",
             dark_color: "#000000",
@@ -105,8 +105,8 @@
                 send_colors(current_theme);
             }
             catch (error) {
-            console.log(error);
-            
+                console.log("send_col Fallo:");
+                console.log(error);
             }
         }
         
@@ -117,28 +117,32 @@
                     document.documentElement.style.setProperty('--bg_color', dark_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', dark_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', dark_theme['txt_color']);
-                    iFrameWin.mimic_colors();
+                    try {iFrameWin.mimic_colors();} catch (error) {console.log("mimic_colors Fallo:"+theme);console.log(error);}
+                    send_col();
                     break;
                 case 'light_theme':
                     current_theme = light_theme;
                     document.documentElement.style.setProperty('--bg_color', light_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', light_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', light_theme['txt_color']);
-                    iFrameWin.mimic_colors();
+                    try {iFrameWin.mimic_colors();} catch (error) {console.log("mimic_colors Fallo:"+theme);console.log(error);}
+                    send_col();
                     break;
                 case 'solar_light_theme':
                     current_theme = solar_light_theme;
                     document.documentElement.style.setProperty('--bg_color', solar_light_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', solar_light_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', solar_light_theme['txt_color']);
-                    iFrameWin.mimic_colors();
+                    try {iFrameWin.mimic_colors();} catch (error) {console.log("mimic_colors Fallo:"+theme);console.log(error);}
+                    send_col();
                     break;
                 case 'solar_dark_theme':
                     current_theme = solar_dark_theme;
                     document.documentElement.style.setProperty('--bg_color', solar_dark_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', solar_dark_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', solar_dark_theme['txt_color']);
-                    iFrameWin.mimic_colors();
+                    try {iFrameWin.mimic_colors();} catch (error) {console.log("mimic_colors Fallo:"+theme);console.log(error);}
+                    send_col();
                     break;
                 default:
                     console.log('no theme named: '+theme);
