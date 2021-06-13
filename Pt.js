@@ -97,7 +97,7 @@ function animate() {
 }
 
 function go(){
-    color = getComputedStyle(document.documentElement).getPropertyValue('--bg_color');
+    color = getComputedStyle(document.documentElement).getPropertyValue('--accent_color');
     dark_color = getComputedStyle(document.documentElement).getPropertyValue('--dark_color');
     init();
     animate();
