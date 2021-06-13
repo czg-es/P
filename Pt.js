@@ -6,8 +6,8 @@ let particleArray = [];
 let adjustX = canvas.width / 1500;
 let adjustY = canvas.height / 1500;
 
-const color = getComputedStyle(document.documentElement).getPropertyValue('--bg_color');
-const dark_color = getComputedStyle(document.documentElement).getPropertyValue('--dark_color');
+let color = getComputedStyle(document.documentElement).getPropertyValue('--bg_color');
+let dark_color = getComputedStyle(document.documentElement).getPropertyValue('--dark_color');
 
 // Get mouse position
 let mouse = {
@@ -85,7 +85,6 @@ function init() {
     }
 }
 
-init();
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -97,7 +96,15 @@ function animate() {
     connect();
 }
 
-animate();
+function go(){
+    color = getComputedStyle(document.documentElement).getPropertyValue('--bg_color');
+    dark_color = getComputedStyle(document.documentElement).getPropertyValue('--dark_color');
+    init();
+    animate();
+
+}
+
+go();
 
 function connect() {
     let rgbc = "140, 85, 31,";
@@ -140,3 +147,4 @@ setInterval(function() {
     mouse.x = undefined;
     mouse.y = undefined;
 }, 1000)
+
