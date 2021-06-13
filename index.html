@@ -71,23 +71,31 @@
         const dark_theme = {
             bg_color : "#383838",
             dark_color: "#000000",
-            txt_color: "#faebd7"
+            txt_color: "#faebd7",
+            accent_color: "#a8a0a0",
+            complementary_color: "#425252"
         }
         const light_theme = {
             bg_color : "#f0fff0",
             dark_color: "#0e740e",
-            txt_color: "#2f4f4f"
+            txt_color: "#2f4f4f",
+            accent_color: "#629962",
+            complementary_color: "#ffa4a4"
         }
 
         const solar_light_theme = {
             bg_color : "#fdf6e3",
             dark_color: "#eee8d5",
-            txt_color: "#586e75"
+            txt_color: "#586e75",
+            accent_color: "#e4d29f",
+            complementary_color: "#9fb1e4"
         }
         const solar_dark_theme = {
             bg_color : "#073642",
             dark_color: "#002b36",
-            txt_color: "#93a1a1"
+            txt_color: "#93a1a1",
+            accent_color: "#b8860b",
+            complementary_color: "#364207"
         }
 
         const themes = ['light_theme','dark_theme','solar_light_theme','solar_dark_theme'];
@@ -130,6 +138,8 @@
                     document.documentElement.style.setProperty('--bg_color', dark_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', dark_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', dark_theme['txt_color']);
+                    document.documentElement.style.setProperty('--accent_color', dark_theme['accent_color']);
+                    document.documentElement.style.setProperty('--complementary_color', dark_theme['complementary_color']);
                     try {iFrameWin.mimic_colors();} catch (error) {console.log("mimic_colors Fallo:"+theme);console.log(error);}
                     send_col();
                     break;
@@ -139,6 +149,8 @@
                     document.documentElement.style.setProperty('--bg_color', light_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', light_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', light_theme['txt_color']);
+                    document.documentElement.style.setProperty('--accent_color', light_theme['accent_color']);
+                    document.documentElement.style.setProperty('--complementary_color', light_theme['complementary_color']);
                     try {iFrameWin.mimic_colors();} catch (error) {console.log("mimic_colors Fallo:"+theme);console.log(error);}
                     send_col();
                     break;
@@ -148,6 +160,8 @@
                     document.documentElement.style.setProperty('--bg_color', solar_light_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', solar_light_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', solar_light_theme['txt_color']);
+                    document.documentElement.style.setProperty('--accent_color', solar_light_theme['accent_color']);
+                    document.documentElement.style.setProperty('--complementary_color', solar_light_theme['complementary_color']);
                     try {iFrameWin.mimic_colors();} catch (error) {console.log("mimic_colors Fallo:"+theme);console.log(error);}
                     send_col();
                     break;
@@ -157,6 +171,8 @@
                     document.documentElement.style.setProperty('--bg_color', solar_dark_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', solar_dark_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', solar_dark_theme['txt_color']);
+                    document.documentElement.style.setProperty('--accent_color', solar_dark_theme['accent_color']);
+                    document.documentElement.style.setProperty('--complementary_color', solar_dark_theme['complementary_color']);
                     try {iFrameWin.mimic_colors();} catch (error) {console.log("mimic_colors Fallo:"+theme);console.log(error);}
                     send_col();
                     break;
