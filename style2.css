@@ -55,9 +55,14 @@ body{
     border: 1px solid var(--txt_color);
     background: #ffffff81;
     box-shadow: 5px 1px 10px var(--txt_color);
+    display: flex;
         
 
 }
+.cv_link > *{
+    padding: 0.1em;
+}
+
 .filling{
     height: 30vh;
 }   

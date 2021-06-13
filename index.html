@@ -20,12 +20,14 @@
                                     class="" target="iframe" title="Contacto">✉️</a>
                 <a href="https://script.google.com/macros/s/AKfycbyBjQtOpBOG0sKodoJXNq1AP-6EYsgB-ImbJ6dkHJcIuylxNTvlvCuLsEiyY-qUTB_D/exec" 
                                     class="" target="iframe" title="Contacto">✉️</a>-->
-                <a href="contact.html" class="" target="iframe" title="Contacto" >✉️</a>
-                
-                <a href="cv.html" class="" target="_blank" title="Sobre mi">🖥️</a>
-                
-            </div>
-            <!-- <a href="https://script.google.com/macros/s/AKfycbwUfRbZFBK0dneNajMpBVkil2ew9Bx07h_JuU6Y170Q_ihuA_rVvqRwlkUOZv3yTjyp/exec" 
+                    <a href="contact.html" class="" target="iframe" title="Contacto" >✉️</a>
+                    
+                    <a href="cv.html" class="" target="_blank" title="Sobre mi">🖥️</a>
+                    <div class="menu">
+                            <select name="select_theme" id="theme_select" onchange="switch_theme(this.value)"></select>
+                    </div>
+                </div>
+                <!-- <a href="https://script.google.com/macros/s/AKfycbwUfRbZFBK0dneNajMpBVkil2ew9Bx07h_JuU6Y170Q_ihuA_rVvqRwlkUOZv3yTjyp/exec" 
                class="cv_link" target="iframe">✉️</a> -->
                
 <!--        <a href="https://script.google.com/macros/s/AKfycbxnptkXWD74t1bHK817eVvSXkzX1kKkffNyyru03BVJGk_sZtBktBpDLVn6ufJgOibmZg/exec?v=c" 
@@ -89,6 +91,12 @@
         }
 
         const themes = ['light_theme','dark_theme','solar_light_theme','solar_dark_theme'];
+
+        const select = document.getElementById("theme_select");
+
+        for(theme in themes) {
+            select.options[select.options.length] = new Option(themes[theme], themes[theme]);
+            }
 
         let current_theme = light_theme;
         let current_theme_name = 'light_theme';
