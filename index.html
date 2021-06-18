@@ -12,14 +12,6 @@
         <div class="logo">
             <a href="/P/" target="_top" title="Home"><canvas id="canvas1" class="canvas1"> </canvas></a>
             <div class="cv_link">
-                <!-- <a href="https://script.google.com/macros/s/AKfycbzeBQ60lBQ892TAN97n0pkrhwQhvLOmkQ2inSjw9I-gS80Ffj_S26sVfThZ7NubAUQI/exec" 
-                    class="" target="iframe" title="Contacto">✉️</a> -->    
-              <!--  <a href="https://script.google.com/macros/s/AKfycbx00K3xPWGobilULBzGD3TEEbwPK-og3A1VJZcrKKhPOEUmqizy5VdAn7BiKzVJ1of8/exec" 
-                    class="" target="iframe" title="Contacto">✉️</a> 
-                <a href="https://script.google.com/macros/s/AKfycbxmBJ89NpvcVefVf_yvdAS64edwsztt2NNpCFsUkkOBJcKi6nkL7D1d7XUYv7CG-qaf/exec" 
-                                    class="" target="iframe" title="Contacto">✉️</a>
-                <a href="https://script.google.com/macros/s/AKfycbyBjQtOpBOG0sKodoJXNq1AP-6EYsgB-ImbJ6dkHJcIuylxNTvlvCuLsEiyY-qUTB_D/exec" 
-                                    class="" target="iframe" title="Contacto">✉️</a>-->
                     <a href="contact.html" class="" target="iframe" title="Contacto" >✉️</a>
                     
                     <a href="cv.html" class="" target="_blank" title="Sobre mi">🖥️</a>
@@ -27,29 +19,19 @@
                             <select name="select_theme" id="theme_select" onchange="switch_theme(this.value);go();"></select>
                     </div>
                 </div>
-                <!-- <a href="https://script.google.com/macros/s/AKfycbwUfRbZFBK0dneNajMpBVkil2ew9Bx07h_JuU6Y170Q_ihuA_rVvqRwlkUOZv3yTjyp/exec" 
-               class="cv_link" target="iframe">✉️</a> -->
-               
-<!--        <a href="https://script.google.com/macros/s/AKfycbxnptkXWD74t1bHK817eVvSXkzX1kKkffNyyru03BVJGk_sZtBktBpDLVn6ufJgOibmZg/exec?v=c" 
-               class="cv_link" target="iframe">✉️</a>
- -->
-
-
         </div>
-        <!-- <div class="filling"></div> -->
-        
         <div class="post">
-            
-            
             <iframe id="iframe" name="iframe" src="https://czg-es.github.io/C_blog" 
                     frameborder="0" width="100%" height="100%" target="_PARENT"
-                    onload="switch_theme(current_theme_name)"></iframe></div>
+                    onload="switch_theme(current_theme_name)"></iframe>
+        </div>
         <div class="foot">CZG.</div>
     </div>
     <script src="Pt.js"></script>
     <script src="_main.js"></script>
     <script >
-        
+        let old_theme = window.name;
+        window.name = "first";
         var iFrameWin; //reference to the window object, sent from iframe
         function exec_child(){
             iFrameWin.mimic_colors();
@@ -82,7 +64,6 @@
             accent_color: "#629962",
             complementary_color: "#ffa4a4"
         }
-
         const solar_light_theme = {
             bg_color : "#fdf6e3",
             dark_color: "#eee8d5",
@@ -102,6 +83,7 @@
 
         const select = document.getElementById("theme_select");
 
+        select.options[select.options.length] = new Option('Theme');
         for(theme in themes) {
             select.options[select.options.length] = new Option(themes[theme], themes[theme]);
             }
@@ -135,6 +117,7 @@
                 case 'dark_theme':
                     current_theme = dark_theme;
                     current_theme_name = 'dark_theme';
+                    window.name = current_theme_name;
                     document.documentElement.style.setProperty('--bg_color', dark_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', dark_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', dark_theme['txt_color']);
@@ -146,6 +129,7 @@
                 case 'light_theme':
                     current_theme = light_theme;
                     current_theme_name = 'light_theme';
+                    window.name = current_theme_name;
                     document.documentElement.style.setProperty('--bg_color', light_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', light_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', light_theme['txt_color']);
@@ -157,6 +141,7 @@
                 case 'solar_light_theme':
                     current_theme = solar_light_theme;
                     current_theme_name = 'solar_light_theme';
+                    window.name = current_theme_name;
                     document.documentElement.style.setProperty('--bg_color', solar_light_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', solar_light_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', solar_light_theme['txt_color']);
@@ -168,6 +153,7 @@
                 case 'solar_dark_theme':
                     current_theme = solar_dark_theme;
                     current_theme_name = 'solar_dark_theme';
+                    window.name = current_theme_name;
                     document.documentElement.style.setProperty('--bg_color', solar_dark_theme['bg_color']);
                     document.documentElement.style.setProperty('--dark_color', solar_dark_theme['dark_color']);
                     document.documentElement.style.setProperty('--txt_color', solar_dark_theme['txt_color']);
@@ -179,13 +165,16 @@
                 default:
                     console.log('no theme named: '+theme);
                     break;
-                
-                
             }
-
         }
+        function preserve() {
+            console.log("Preserve func triggered");
+            switch_theme(old_theme);
+            go();
+        }
+        preserve();
     </script>
-    
+        
     <!-- <script>        document.getElementById("iframe").onload = function () { this.contentWindow.scrollTo(0, 200) };    </script> -->
 </body>
 </html>

@@ -43,7 +43,7 @@ class Particle {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.closePath();
-        ctx.fill();
+        //ctx.fill();
     }
     update() {
         let dx = mouse.x - this.x;
